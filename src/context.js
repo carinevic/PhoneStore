@@ -11,8 +11,12 @@ const ProductContext = React.createContext();
          products: [],
          detailProduct: detailProduct,
          cart:[],
-         modalOpen:true,
+         modalOpen:false,
          modalProduct:detailProduct,
+         cartSubTotal: 0,
+         cartTax: 0,
+         cartTotal: 0
+
      };
      componentDidMount(){
          this.setProducts();
@@ -59,7 +63,7 @@ const ProductContext = React.createContext();
     openModal = id => {
         const product = this.getItem(id);
         this.setState(() =>{
-            return {modalProduct:product,modalOpen:true}
+            return {modalProduct:product, modalOpen:true}
         })
     }
     closeModal = ()=>{
@@ -67,7 +71,19 @@ const ProductContext = React.createContext();
             return {modalOpen:false}
         })
     }
-    
+    increment =(id) =>{
+        console.log('this is increment')
+    }
+    decrement =(id) =>{
+        console.log('this is drecrement')
+    }
+    removeItem =(id) =>{
+        console.log('item remove');
+
+    }
+    clearCart =()=>{
+        console.log('cart clear')
+    }
     render() {
         return (
            <ProductContext.Provider value={{
@@ -75,7 +91,11 @@ const ProductContext = React.createContext();
                handleDetail:this.handleDetail,
                addToCart:this.addToCart,
                openModal:this.openModal,
-               closeModal:this.closeModal
+               closeModal:this.closeModal,
+              increment:this.increment,
+              decrement:this.decrement,
+              removeItem:this.removeItem,
+              clearCart: this.clearCart
 
            }}>
             
