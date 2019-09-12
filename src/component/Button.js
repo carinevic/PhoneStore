@@ -9,14 +9,14 @@ background: transparent;
 border: 0.05rem solid var(--lightBlue);
 color: var(--lightBlue);
 border-radius: 0.5rem;
-border-color:${props =>props.cart? "(var--mainYellow)":"var(--lightBlue)"};
-color:${prop => prop.cart? "(var--mainYellow) ":"var(--lightBlue)"};
+border-color:${props =>props.cart? "(var--mainYellow)" : "var(--lightBlue)"};
+color:${prop => prop.cart? "(var--mainYellow) " : "var(--lightBlue)"};
 padding: 0.2rem 0.5rem;
 cursor:pointer;
 margin: 0.2rem 0.5rem 0.2rem 0;
 transitional: all 0.5s ease-in-out;
 &:hover{
-    background: ${prop => prop.cart? "(var--mainYellow) ":"var(--lightBlue)"};
+    background: ${prop => prop.cart? "(var--mainYellow) " : "var(--lightBlue)"};
     color: var(--mainBlue);
 }
 &:focus{

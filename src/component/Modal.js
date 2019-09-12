@@ -9,7 +9,7 @@ export default class Modal extends Component {
         return (
             <ProductConsumer>
                 {(value) =>{
-                    const {modalOpen, closedModal} = value;
+                    const {modalOpen, closeModal} = value;
                     const {img, title, price} = value.modalProduct;
 
                     if(!modalOpen){
@@ -19,22 +19,23 @@ export default class Modal extends Component {
                         <ModalContainer>
                             <div className="container">
                                 <div className="row">
-                                    <div  id="modal " className="col-8 mx-auto col-md-6 text-muted
+                                    <div  id="modal" className="col-8 mx-auto col-md-6 text-muted
                                     col-lg-4 text-center text-capitalize p-5">
                                      <h5>item added to the cart</h5>
                                      <img src={img} className="img-fluid" alt="product" />
                                      <h5>{title}</h5>
                                      <h5 className="text-muted">price : $ {price} </h5>
-                                     <Link to='/'>
-                                         <ButtonContainer onClick={() =>closedModal()}>
-                                             Continue Shopping
-                                         </ButtonContainer>
+                                     <Link to="/">
+                                   <ButtonContainer onClick={() => closeModal()}>
+                                             Continue Shopping  
+                                       
+                              </ButtonContainer>
                                      </Link>
                                      <Link to="/cart">
-                                         <ButtonContainer cart  onClick={()=> 
-                                            closedModal()}>
+                                 <ButtonContainer cart  onClick={() =>  
+                                            closeModal()}>
                                              go to cart
-                                         </ButtonContainer>
+                                </ButtonContainer>
                                      </Link>
                                     </div>
 

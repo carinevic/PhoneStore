@@ -73,7 +73,7 @@ const ProductContext = React.createContext();
     }
     increment =(id) =>{
       let tempCart = [...this.state.cart];
-      const selectedProduct = tempCart.find(item =>item.id == id)
+      const selectedProduct = tempCart.find(item =>item.id === id)
 
       const index = tempCart.indexOf(selectedProduct);
       const product = tempCart[index];
@@ -89,7 +89,7 @@ const ProductContext = React.createContext();
     }
     decrement =(id) =>{
         let tempCart = [...this.state.cart];
-        const selectedProduct = tempCart.find(item =>item.id == id)
+        const selectedProduct = tempCart.find(item =>item.id === id)
   
         const index = tempCart.indexOf(selectedProduct);
         const product = tempCart[index];
@@ -144,7 +144,7 @@ const ProductContext = React.createContext();
         this.state.cart.map (item =>(
             subTotal += item.total));
             const tempTax = subTotal * 0.1;
-            const tax = parseFloat(tempTax. toFixed(2));
+            const tax = parseFloat(tempTax.toFixed(2));
             const total = subTotal + tax
             this.setState(() =>{
                 return{

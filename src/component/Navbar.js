@@ -47,6 +47,7 @@ https://www.iconfinder.com/Makoto_msk */
         );
     }
 }
+
 const NavWrapper = styled.nav`
 background: var(--mainBlue);
 .nav-link{
