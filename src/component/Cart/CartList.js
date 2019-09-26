@@ -11,7 +11,7 @@ export default function CartList ({value}) {
             {cart.map(item =>{
                 return <CartItem key ={item.id} item={item} value={value}/>
             })}
-           hello from cart list 
+         
           
 
         </div>
